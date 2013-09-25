@@ -7,7 +7,6 @@ MarkupSafe==0.18
 Werkzeug==0.9.4
 async==0.6.1
 clint==0.3.1
-gdata==2.0.18
 gitdb==0.5.4
 google-api-python-client==1.2
 httplib2==0.8
