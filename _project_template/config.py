@@ -48,22 +48,3 @@ Example use of flask blueprint to add a template filter.
 # @blueprint.app_template_filter('example_filter')
 # def example_filter(text):
 #    return text + ' ...suffix.'
-
-
-"""
-Load secrets. Don't change this unless you know what you're doing.
-"""
-import os
-import imp
-try:
-    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'secrets.py')):
-        def get_secrets():
-            """ Return a secrets module """
-            root = os.path.dirname(os.path.abspath(__file__))
-            return imp.find_module('secrets', [root])
-
-        secrets = imp.load_module('secrets', *get_secrets())
-
-        if hasattr(secrets, 'GOOGLE_AUTH'):
-            GOOGLE_DOC.update(secrets.GOOGLE_AUTH)
-except IOError: pass
