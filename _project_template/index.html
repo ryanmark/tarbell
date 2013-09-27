@@ -5,9 +5,7 @@
 
 {{ "{# Call base template css block #}" }}
 {{ "{{ super() }}" }}
-
-{{ "{# Now add our stylesheet using static_url function #}" }}
-<link rel="stylesheet" type="text/css" href="{{ "{{ static_url('" }}{{ project_name }}{{ "', '/css/style.css') }}" }}" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
 {{ "{% endblock %}" }}
 
 {{ "{# Uncomment the next line to use your skip the Tarbell app and use your own Javascript. #}" }}
@@ -50,7 +48,7 @@
                 <!-- Random Ida Tarbell quote -->
                 <h3>Ida Tarbell says...</h3>
                 <p id="tarbell-quote"></p>
-                <img id="tarbell-image" src="{{ "{{ static_url('readme', '/img/ida-tarbell.jpg') }}" }}" alt="Portrait of Ida Tarbell" />
+                <img id="tarbell-image" src="img/ida-tarbell.jpg" alt="Portrait of Ida Tarbell" />
             </div>
             <div class="span4">
                 <!-- Moment JS --> 
@@ -75,12 +73,4 @@
             </div>
         </div>
     </section>
-
-    <hr />
-
-    {# Demonstrate the read_file template helper and markdown template filter #}
-    <section id="build" data-title="Building reference">
-        {{ "{{ read_file('readme/docs/build.md')|markdown }}" }}
-    </section>
-
 {{ "{% endblock %}" }}
